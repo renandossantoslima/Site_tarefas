@@ -11,6 +11,12 @@
 	</head>
 	<body>
 
+		<form method="post" action="cadastro_tarefas.php" enctype="multipart/form-data"><!-- inicio form  -->
+
+			<button type="subimt">Cadastrar</button>
+			
+		</form><!-- fim form  -->
+
 		<?php
 			//Intancia as tarefas
 			$tarefas = new CrudTarefas();
@@ -19,7 +25,7 @@
 		?>
 
 		<p><?php echo $descricao = $value->descricao; ?></p>
-		<span><?php echo $verificaacao = $value->verificaacao; ?></span>
+		
 
 	<?php } ?>
 
