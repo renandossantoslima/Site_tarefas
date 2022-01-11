@@ -22,6 +22,9 @@
 			$descricao = $_POST['descricao'];
 			$verificacao = $_POST['verificacao'];
 
+			//teste de botao radio para verificação
+			//$teste = $_POST['teste'];
+
 			$tarefas->__set('descricao',$descricao);
 			$tarefas->__set('verificacao',$verificacao);
 			$tarefas->update($id);
@@ -48,6 +51,19 @@
 
 			<input type="hidden" name="id" value="<?php echo $id; ?>">
 			<input type="hidden" name="verificacao" value="<?php echo $verificacao; ?>">
+
+
+			<?php if($verificacao == 1){ 
+			?>
+				<input type="radio" name="verificacao" value="1" checked="checked">Concluida</br>
+				<input type="radio" name="verificacao" value="0">Não concluida</br>
+
+			<?php }else{ ?>
+				<input type="radio" name="verificacao" value="1">Concluida</br>
+				<input type="radio" name="verificacao" value="0" checked="checked">Não concluida</br>
+			<?php }?>
+
+
 			<button type="submit" name="atualizar">Atualizar</button>
 			
 		</form><!-- fim form -->

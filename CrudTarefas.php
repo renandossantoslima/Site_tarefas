@@ -40,6 +40,15 @@ class CrudTarefas extends Tarefas{
 		$stm->execute();
 		return $stm->fetchAll();
 	}
+
+	//muda a verificação direto na pagina principal
+	public function updateVerificacao($id){
+		$sql = "update $this->tabela Set verificacao = :veri Where id = :id";
+		$stm = DB::prepare($sql);
+		$stm->bindParam(':id',$id,PDO::PARAM_INT);
+		$stm->bindParam(':veri',$this->verificacao);
+		return $stm->execute();
+	}
 }
 
 
