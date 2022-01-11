@@ -16,8 +16,22 @@ class CrudTarefas extends Tarefas{
 	}
 
 	//Editar tarefa
+	public function update($id){
+		$sql = "Update $this->tabela Set descricao = :des, verificacao = :veri where id = :id;";
+		$stm = DB::prepare($sql);
+		$stm->bindParam(':id',$id,PDO::PARAM_INT);
+		$stm->bindParam(':des',$this->descricao);
+		$stm->bindParam(':veri',$this->verificacao);
+		return $stm->execute();
+	}
 
 	//Excluir tarefa
+	public function delete($id){
+		$sql = "Delete from $this->tabela Where id = :id";
+		$stm = DB::prepare($sql);
+		$stm->bindParam(':id',$id, PDO::PARAM_INT);
+		return $stm->execute();
+	}
 
 	//Selecionar as todas as tarefas
 	public function findAll(){
