@@ -4,13 +4,7 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Site</title>
-		<meta charset="utf-8">
-	</head>
-	<body>
+<?php require_once 'topo.html'; ?>
 
 		<?php
 
@@ -44,31 +38,52 @@
 
 		?>
 
-		<form method="post"><!-- inicio form -->
+		<div class="container quadro"><!-- inicio container -->
 
-			<label>Descricao</label>
-			<input type="text" name="descricao" value="<?php echo $descricao; ?>">
+			<h3>Editar tarefa</h3>
 
-			<input type="hidden" name="id" value="<?php echo $id; ?>">
-			<input type="hidden" name="verificacao" value="<?php echo $verificacao; ?>">
+			<form method="post"><!-- inicio form -->
 
+				<div class="form-group">
+					<label for="descricao">Dirite a tarefa</label>
+					<input type="text"class="form-control" name="descricao" value="<?php echo $descricao; ?>">
+				</div>
 
-			<?php if($verificacao == 1){ 
-			?>
-				<input type="radio" name="verificacao" value="1" checked="checked">Concluida</br>
-				<input type="radio" name="verificacao" value="0">Não concluida</br>
-
-			<?php }else{ ?>
-				<input type="radio" name="verificacao" value="1">Concluida</br>
-				<input type="radio" name="verificacao" value="0" checked="checked">Não concluida</br>
-			<?php }?>
+				<input type="hidden" name="id" value="<?php echo $id; ?>">
+				<input type="hidden" name="verificacao" value="<?php echo $verificacao; ?>">
 
 
-			<button type="submit" name="atualizar">Atualizar</button>
+				<?php if($verificacao == 1){ 
+				?>
+				<div class="row">
+					<div class="col-4">
+						<input type="radio" name="verificacao" value="1" checked="checked">Concluida</br>
+					</div>
+					<div class="col-4">
+						<input type="radio" name="verificacao" value="0">Não concluida
+					</div>
+				</div>
+
+				<?php }else{ ?>
+					<div class="row">
+						<div class="col-4">
+							<input type="radio" name="verificacao" value="1">Concluida</br>
+						</div>
+						<div class="col-4">
+							<input type="radio" name="verificacao" value="0" checked="checked">Não concluida</br>
+						</div>
+					</div>
+					
+				<?php }?>
+
+				<div class="botao">
+					<button type="submit" class="btn btn-primary" name="atualizar">Atualizar</button>
+				</div>
+				
+			</form><!-- fim form -->
+
+			<button class="btn btn-primary" type="submit"><a href="index.php">Voltar</a></button>
 			
-		</form><!-- fim form -->
+		</div><!-- fim container -->
 
-		<button type="submit"><a href="index.php">Voltar</a></button>
-
-	</body>
-</html>
+<?php require_once 'rodape.html'; ?>
