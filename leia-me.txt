@@ -12,3 +12,6 @@
 
 -Pasta css contém o estilo:
 ---arquivo: style.css;
+
+-Pasta banco contém o arquivo para criar as tabelas no banco de dados:
+---arquivo: tarefas.sql;
