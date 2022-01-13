@@ -1,0 +1,14 @@
+-Conexão com o banco de dados:
+---arquivos: conexao.php,DB.php;
+
+-Classe:
+---arquivos: Tarefas.php;
+
+-Editar, inserir, deletar e selecionar:
+---arquivo: CrudTarefas.php
+
+-Telas da aplicação:
+---arquivos: index.php, cadastro_tarefas.php, confirmar.php, editar.php, excluir.php, topo.html e rodape.html;
+
+-Pasta css contém o estilo:
+---arquivo: style.css;
