@@ -44,7 +44,7 @@
 			<div class="row"><!-- inicio row -->
 
 				<div class="col-10">
-					<p><s><?php echo $descricao = $value->descricao; ?></s></p>
+					<span><s><?php echo $descricao = $value->descricao; ?></s> (Concluida)</sapn>
 				</div>
 
 				<div class="col-1">
@@ -73,7 +73,7 @@
 
 			<div class="row">
 				<div class="col-8">
-					<p><?php echo $descricao = $value->descricao; ?></p>
+					<span><?php echo $descricao = $value->descricao; ?></span>
 				</div>
 
 				<div class="col-1">

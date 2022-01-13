@@ -35,7 +35,7 @@ class CrudTarefas extends Tarefas{
 
 	//Selecionar as todas as tarefas
 	public function findAll(){
-		$sql = "Select * from $this->tabela";
+		$sql = "Select * from $this->tabela Order by id Desc";
 		$stm = DB::prepare($sql);
 		$stm->execute();
 		return $stm->fetchAll();

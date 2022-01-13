@@ -23,7 +23,9 @@
 			$tarefas->__set('verificacao',$verificacao);
 			$tarefas->update($id);
 
-			echo "Deu certo";
+			echo "<div class='alert alert-success' role='alert'>
+  							Autalizada com sucesso!
+					</div>";
 			//header('Location: index.php');
 
 		}else if(isset($_POST['editar'])){
@@ -33,7 +35,9 @@
 			$verificacao = $_POST['verificacao'];
 
 		}else{
-			echo "Deu erro";
+			echo "<div class='alert alert-danger' role='alert'>
+  							Tarefa não atualizada!
+					</div>";
 		}
 
 		?>
@@ -45,7 +49,7 @@
 			<form method="post"><!-- inicio form -->
 
 				<div class="form-group">
-					<label for="descricao">Dirite a tarefa</label>
+					<label for="descricao">Atualize a tarefa:</label>
 					<input type="text"class="form-control" name="descricao" value="<?php echo $descricao; ?>">
 				</div>
 
